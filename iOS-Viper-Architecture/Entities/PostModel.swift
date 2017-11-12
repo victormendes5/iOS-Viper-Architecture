@@ -7,25 +7,17 @@
 //
 
 import Foundation
-import ObjectMapper
 
-struct PostModel {
-    var id = 0
-    var title = ""
-    var imageUrl = ""
-    var thumbImageUrl = ""
-}
-
-extension PostModel: Mappable {
+struct PostModel: Codable {
     
-    init?(map: Map) {
-    }
+    var id: Int
+    var title: String
+    var imageUrl: String
+    var thumbImageUrl: String
     
-    mutating func mapping(map: Map) {
-        id       <- map["id"]
-        title     <- map["title"]
-        imageUrl     <- map["url"]
-        thumbImageUrl     <- map["thumbUrl"]
+    private enum CodingKeys : String, CodingKey {
+        case id, title, imageUrl = "url", thumbImageUrl = "thumbUrl"
     }
     
 }
+

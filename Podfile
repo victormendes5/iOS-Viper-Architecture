@@ -7,8 +7,6 @@ target 'iOS-Viper-Architecture' do
 
   # Pods for iOS-Viper-Architecture
   pod 'Alamofire', '~> 4.5.0'
-  pod 'AlamofireObjectMapper', '~> 5.0'
-  pod 'AlamofireImage', '~> 3.3'
   pod 'PKHUD', '~> 5.0'
 
 end

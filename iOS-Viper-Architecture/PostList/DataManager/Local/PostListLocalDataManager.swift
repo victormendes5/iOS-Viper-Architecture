@@ -26,8 +26,7 @@ class PostListLocalDataManager:PostListLocalDataManagerInputProtocol {
             throw PersistenceError.managedObjectContextNotFound
         }
         
-        if let newPost = NSEntityDescription.entity(forEntityName: "Post",
-                                                           in: managedOC) {
+        if let newPost = NSEntityDescription.entity(forEntityName: "Post", in: managedOC) {
             let post = Post(entity: newPost, insertInto: managedOC)
             post.id = Int32(id)
             post.title = title
